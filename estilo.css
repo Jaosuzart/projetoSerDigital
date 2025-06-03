@@ -556,79 +556,87 @@ footer {
 
 @media (max-width: 768px) {
   .header-menu {
-    display: none;
-    position: fixed;
-    top: 70px;
+    position: absolute;
     left: 0;
-    width: 100%;
-    background-color: var(--light);
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    right: 0;
+    top: 100px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out;
+    background-color: white;
+    transition: max-height 0.3s;
+    margin: 0;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .menu-btn:checked ~ .header-menu {
+    max-height: 100vh;
   }
 
-  .header-menu.active {
-    display: flex;
-    max-height: 500px;
+  .menu-btn:checked + .menu-icon .nav-icon {
+    background-color: transparent;
   }
 
-  .header-menu li {
-    margin: 15px 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .header-menu a {
-    display: block;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .hero_title {
-    font-size: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .image-section h2 {
-    font-size: 2rem;
+  .header-menu:focus-within {
+    max-height: 100vh;
   }
 }
 
-@media (max-width: 576px) {
-  .brands ul {
-    gap: 15px;
+@media screen and (min-width: 46.25em) {
+  .header-menu {
+    position: static;
+    max-height: initial;
+    background-color: initial;
   }
+}
 
-  .brands li {
-    padding: 12px 20px;
-  }
+.header nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
-  .hero_title {
-    font-size: 1.8rem;
-  }
+.menu-icon {
+  position: relative;
+  cursor: pointer;
+  height: 24px;
+}
 
-  .hero p {
-    font-size: 1rem;
-  }
+.nav-icon {
+  background-color: #333;
+  display: inline-block;
+  height: 2px;
+  width: 24px;
+  position: relative;
+}
 
-  .testemunhos_title {
-    font-size: 1.6rem;
-  }
+.nav-icon::after,
+.nav-icon::before {
+  content: "";
+  background-color: #333;
+  display: inline-block;
+  height: 2px;
+  width: 24px;
+  position: absolute;
+  transition: transform 0.2s;
+}
 
-  .image-section h2 {
-    font-size: 1.7rem;
-  }
+.nav-icon::after {
+  transform: translateY(8px);
+}
 
-  .testemunho {
-    padding: 25px;
-  }
+.nav-icon::before {
+  transform: translateY(-8px);
+}
+
+.menu-btn:checked + .menu-icon .nav-icon::before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked + .menu-icon .nav-icon::after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:focus-visible + .menu-icon {
+  outline: 2px solid black;
+  outline-offset: 3px;
 }
