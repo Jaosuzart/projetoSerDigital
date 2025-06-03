@@ -8,8 +8,6 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -133,6 +131,7 @@ img {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeUp 0.8s forwards 0.3s;
+  min-height: min-content;
 }
 
 .hero p {
