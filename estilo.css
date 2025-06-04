@@ -34,12 +34,13 @@ body {
     );
   line-height: 1.6;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* Espaçamento lateral padrão para containers */
+  padding: 0 20px;
 }
 
 /* Header Styles Corrigido */
@@ -52,12 +53,10 @@ body {
 }
 
 .header-container {
-  /* Este é o .container dentro do .header */
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  /* padding 0 20px; vem da classe .container pai do header */
 }
 
 .logo img {
@@ -65,89 +64,90 @@ body {
   display: block;
 }
 
-/* Menu Hambúrguer Corrigido */
+/* Menu Hambúrguer Corrigido - SOLUÇÃO */
 .menu-toggle {
-  display: flex; /* Mostra o botão do menu hambúrguer */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40px; /* Tamanho do botão */
-  height: 40px; /* Tamanho do botão */
+  width: 50px;
+  height: 50px;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1002; /* Acima do menu e do header, para garantir que seja clicável */
-  position: relative; /* Para o posicionamento absoluto do menu não interferir */
+  z-index: 1002;
+  position: relative;
 }
 
 .menu-toggle span {
   display: block;
-  width: 28px; /* Largura das linhas */
-  height: 3px; /* Espessura das linhas */
+  width: 28px;
+  height: 3px;
   background-color: var(--dark);
-  /* border-radius: 2px; */ /* Removido para tirar o efeito de "bola" */
-  margin: 3px 0; /* Espaçamento entre as linhas */
+  margin: 4px 0;
   transition: var(--transition);
-  transform-origin: center; /* Rotação a partir do centro */
+  transform-origin: center;
 }
 
-/* Animação para "X" quando .active é adicionado pelo JavaScript */
+/* Animação para "X" quando ativo */
 .menu-toggle.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg); /* Distância de 9px (3px de altura + 2x3px de margem) */
-  background-color: var(--dark); /* Pode mudar a cor se quiser */
+  transform: translateY(10px) rotate(45deg);
+  background-color: var(--primary-color);
 }
 
 .menu-toggle.active span:nth-child(2) {
-  opacity: 0; /* Linha do meio some */
+  opacity: 0;
 }
 
 .menu-toggle.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-  background-color: var(--dark); /* Pode mudar a cor se quiser */
+  transform: translateY(-10px) rotate(-45deg);
+  background-color: var(--primary-color);
 }
 
 .header-menu {
-  position: fixed; /* Fixo na tela */
-  top: 80px; /* Abaixo do header */
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 0; /* Ocupa toda a altura restante */
-  background-color: var(--light);
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.95);
   flex-direction: column;
-  justify-content: flex-start; /* Alinha itens no topo */
-  align-items: center; /* Centraliza os itens de menu */
-  padding-top: 50px; /* Mais espaço no topo do menu */
-  gap: 20px; /* Espaço entre os itens de menu */
-  transform: translateX(-100%); /* Começa totalmente fora da tela (esquerda) */
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  gap: 25px;
+  transform: translateX(-100%);
   transition: transform 0.4s ease-in-out;
-  z-index: 999; /* Abaixo do header mas acima do resto do conteúdo */
-  overflow-y: auto; /* Permite rolagem se muitos itens */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  overflow-y: auto;
+  display: flex;
 }
 
 .header-menu.active {
-  transform: translateX(0); /* Desliza para a posição visível */
+  transform: translateX(0);
 }
 
 .header-menu li {
-  width: 80%; /* Faz os itens não ocuparem 100% da largura, para estética */
+  width: 80%;
   text-align: center;
 }
 
 .header-menu a {
-  font-size: 1.3rem; /* Tamanho de fonte maior para mobile */
-  padding: 15px 30px; /* Alvos de toque maiores e melhor espaçamento */
+  font-size: 1.5rem;
+  padding: 15px 30px;
   width: 100%;
   display: block;
-  border-radius: 8px; /* Leve arredondamento nos links */
+  border-radius: 8px;
   text-decoration: none;
   color: var(--dark);
+  font-weight: 600;
+  transition: var(--transition);
 }
 
 .header-menu a:hover {
-  background-color: var(--gray); /* Feedback visual ao passar o mouse/tocar */
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--light);
 }
 
 /* Hero Section */
@@ -160,8 +160,7 @@ body {
 }
 
 .hero .content {
-  /* O container já tem padding, então não precisa no .content */
-  max-width: 600px; /* Limita a largura do conteúdo do hero */
+  max-width: 600px;
   margin-bottom: 40px;
 }
 .hero-subtitle {
@@ -178,7 +177,6 @@ body {
 }
 
 .hero p {
-  /* Estilo para o parágrafo de descrição geral do hero */
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #555;
@@ -210,10 +208,10 @@ body {
 /* Brands Section */
 .brands {
   background-color: var(--light);
-  padding: 70px 0; /* Padding vertical. Horizontal vem do .container */
+  padding: 70px 0;
   text-align: center;
   border-radius: 15px;
-  margin: 40px auto; /* Para centralizar a section se ela for menor que o container */
+  margin: 40px auto;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
 }
 
@@ -241,7 +239,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 30px;
-  max-width: 900px; /* Para centralizar o grid dentro do container */
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -276,20 +274,19 @@ body {
 /* Services Sections */
 .service-section {
   background-color: var(--light);
-  padding: 80px 0; /* Padding vertical. Horizontal do .container interno */
+  padding: 80px 0;
   border-radius: 15px;
   margin: 40px auto;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
 }
 
 .service-container {
-  /* Usado dentro de .service-section > .container */
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   align-items: center;
-  max-width: 1100px; /* Para limitar o conteúdo do serviço */
-  margin: 0 auto; /* Centraliza o service-container */
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .service-content {
@@ -306,12 +303,12 @@ body {
 
 .service-content p {
   color: #555;
-  margin-bottom: 20px; /* Reduzido um pouco */
+  margin-bottom: 20px;
   font-size: 1.1rem;
   line-height: 1.7;
 }
 .service-content p:last-of-type {
-  margin-bottom: 30px; /* Mais espaço antes do link */
+  margin-bottom: 30px;
 }
 
 .service-link {
@@ -346,12 +343,11 @@ body {
 footer {
   background-color: #1a2435;
   color: var(--light);
-  padding: 70px 0 20px; /* Padding vertical. Horizontal do .container interno */
+  padding: 70px 0 20px;
   margin-top: 60px;
 }
 
 .footer-grid {
-  /* Usado dentro de footer > .container */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
@@ -362,13 +358,12 @@ footer {
   text-align: left;
 }
 .footer-section p {
-  /* Estilo para parágrafos no footer */
   margin-bottom: 10px;
-  color: #b0b8c5; /* Cor mais clara para texto do footer */
+  color: #b0b8c5;
 }
 .footer-section p i {
   margin-right: 8px;
-  color: var(--primary-color); /* Cor dos ícones */
+  color: var(--primary-color);
 }
 
 .footer-section h3 {
@@ -471,23 +466,18 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Animations */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.divider {
+  height: 3px;
+  width: 80px;
+  background: var(--primary-color);
+  margin: 30px auto;
+  border-radius: 2px;
 }
 
 /* Responsive Design */
 @media (min-width: 769px) {
   .menu-toggle {
-    display: none; /* Esconde o botão do menu hambúrguer em telas maiores */
+    display: none;
   }
 
   .header-menu {
@@ -500,11 +490,12 @@ footer {
     gap: 30px;
     transform: none;
     box-shadow: none;
+    background: transparent;
+    z-index: auto;
   }
 }
 
 @media (max-width: 992px) {
-  /* Tablets e laptops menores */
   .hero_title {
     font-size: 2.5rem;
   }
@@ -514,15 +505,15 @@ footer {
   }
 
   .service-container {
-    flex-direction: column; /* Empilha conteúdo e imagem */
+    flex-direction: column;
   }
 
   .service-image {
-    order: -1; /* Imagem vem antes do texto */
+    order: -1;
     margin-bottom: 30px;
   }
   .service-content {
-    text-align: center; /* Centraliza texto do serviço */
+    text-align: center;
   }
   .service-content h2,
   .service-content p {
@@ -531,7 +522,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  /* Tablets em modo retrato e smartphones */
   .hero_title {
     font-size: 2.2rem;
   }
@@ -539,7 +529,7 @@ footer {
     font-size: 1.1rem;
   }
   .footer-grid {
-    grid-template-columns: 1fr; /* Uma coluna no footer */
+    grid-template-columns: 1fr;
     text-align: center;
   }
   .footer-section {
@@ -552,12 +542,16 @@ footer {
   .social-icons {
     justify-content: center;
   }
+
+  /* Correção para o menu mobile */
+  .header-menu {
+    padding-top: 80px; /* Espaço para o botão hambúrguer */
+  }
 }
 
 @media (max-width: 480px) {
-  /* Smartphones menores */
   .hero {
-    padding: 60px 20px 40px; /* Menos padding vertical */
+    padding: 60px 20px 40px;
   }
 
   .hero_title {
@@ -587,12 +581,29 @@ footer {
   .brand-item img {
     max-height: 30px;
   }
+
+  .header-menu a {
+    font-size: 1.3rem;
+    padding: 12px 20px;
+  }
 }
 
-.divider {
-  height: 3px;
-  width: 80px;
-  background: var(--primary-color);
-  margin: 30px auto;
-  border-radius: 2px;
+/* Close button para mobile */
+.menu-close {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--dark);
+  cursor: pointer;
+  z-index: 1003;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-close {
+    display: block;
+  }
 }

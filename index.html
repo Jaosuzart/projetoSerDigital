@@ -13,128 +13,138 @@
 </head>
 
 <body>
+    <!-- Header com menu corrigido -->
     <header class="header">
-        <div class="container">
-            <div class="header-container">
-                <a href="#" class="logo">
-                    <img src="imagens/SER-DIGITAL.svg" alt="Logo">
-                </a>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="imagens/SER-DIGITAL.svg" alt="Logo">
+            </div>
 
-                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <nav>
+                <button class="menu-toggle" id="menuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
                 <ul class="header-menu" id="headerMenu">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <button class="menu-close" id="menuClose"><i class="fas fa-times"></i></button>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#brands">Clientes</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </header>
 
-    <section class="hero" id="inicio">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="container">
             <div class="content">
-                <p class="hero-subtitle">Transformamos ideias em experiências digitais</p>
-                <h1 class="hero_title">Soluções inovadoras que conectam</h1>
-                <p>Conectamos marcas e pessoas através da tecnologia para criar experiências memoráveis e resultados
-                    tangíveis.</p>
+                <p class="hero-subtitle">SOLUÇÕES DIGITAIS</p>
+                <h1 class="hero_title">Transformando ideias em realidade digital</h1>
+                <p>Desenvolvemos soluções inovadoras que impulsionam seu negócio para o próximo nível com tecnologia de
+                    ponta e design excepcional.</p>
                 <div class="hero-cta">
-                    <a href="#projetos" class="btn">Conheça nossos projetos</a>
+                    <a href="#contact" class="btn">Comece Agora</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="brands" id="marcas">
+    <!-- Brands Section -->
+    <section class="brands" id="brands">
         <div class="container">
-            <h2 class="section-title">Marcas que confiam em nós</h2>
+            <h2 class="section-title">Clientes que confiam em nós</h2>
+            <div class="divider"></div>
             <div class="brand-grid">
                 <div class="brand-item">
-                    <img src="imagens/dropbox.svg" alt="Brand 1">
+                    <img src="imagens/dropbox.svg" alt="Marca 1">
                 </div>
                 <div class="brand-item">
-                    <img src="imagens/slack.svg" alt="Brand 2">
+                    <img src="imagens/slack.svg" alt="Marca 2">
                 </div>
                 <div class="brand-item">
-                    <img src="imagens/spotify.svg" alt="Brand 3">
+                    <img src="imagens/spotify.svg" alt="Marca 3">
                 </div>
                 <div class="brand-item">
-                    <img src="imagens/youtube-svgrepo-com.svg" alt="Brand 4">
+                    <img src="imagens/zoom.svg" alt="Marca 4">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="service-section" id="servicos">
+    <!-- Services Section -->
+    <section class="service-section" id="services">
         <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="divider"></div>
+
             <div class="service-container">
                 <div class="service-content">
-                    <h2>Transformação Digital</h2>
-                    <p>Oferecemos soluções completas para transformar seu negócio digitalmente. Nossos serviços incluem
-                        desenvolvimento web, design de UX/UI, marketing digital e consultoria estratégica.</p>
-                    <p>Com uma abordagem centrada no usuário, criamos experiências digitais que encantam clientes e
-                        impulsionam resultados.</p>
-                    <a href="#contato" class="service-link">
-                        Fale conosco
+                    <h2>Desenvolvimento Web</h2>
+                    <p>Criamos websites e aplicações web responsivas e de alto desempenho, utilizando as tecnologias
+                        mais recentes do mercado.</p>
+                    <p>Nossas soluções são otimizadas para SEO, velocidade e experiência do usuário, garantindo que seu
+                        site se destaque em meio à concorrência.</p>
+                    <a href="#" class="service-link">
+                        Saiba mais
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
                 <div class="service-image">
-                    <img src="imagens/customer-support-2x.png">
+                    <img src="imagens/customer-support.png" alt="Desenvolvimento Web">
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>Nossa Empresa</h3>
+                    <h3>Sobre Nós</h3>
+                    <p>Transformamos ideias em soluções digitais inovadoras que impulsionam negócios e criam
+                        experiências memoráveis para usuários.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
                     <ul class="footer-links">
-                        <li><a href="#sobre">Sobre Nós</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#projetos">Projetos</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#brands">Clientes</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#contact">Contato</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h3>Contato</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Av. Digital, 1234</p>
-                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
                     <p><i class="fas fa-envelope"></i> contato@empresa.com</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    </div>
                 </div>
 
                 <div class="footer-section">
                     <h3>Newsletter</h3>
-                    <p>Inscreva-se para receber nossas novidades e atualizações.</p>
+                    <p>Inscreva-se para receber nossas novidades e promoções.</p>
                     <input type="email" class="footer-input" placeholder="Seu e-mail">
                     <button class="footer-btn">Inscrever</button>
                 </div>
             </div>
-            <section class="copyright sm-12">
-                <p>&copy; Matheus - @matheusdias20 </p>
-                <p>Todos os direitos reservados
-                    https://www.figma.com/@matheusdias20
-                    https://github.com/matheusdias20 </p>
-            </section>
 
             <div class="footer-bottom">
-                <p>&copy; 2023 Empresa Digital. Todos os direitos reservados.</p>
+                <p>&copy; 2023 Empresa. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
