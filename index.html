@@ -14,158 +14,119 @@
 
 <body>
     <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo"><img src="imagens/SER-DIGITAL.svg" alt="Ser Digital Logo"></a>
-            <button class="menu-toggle" id="menuToggle">☰</button>
-            <nav>
+        <div class="container">
+            <div class="header-container">
+                <a href="#" class="logo">
+                    <img src="imagens/SER-DIGITAL.svg" alt="Logo">
+                </a>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
                 <ul class="header-menu" id="headerMenu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Portfólio</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
-            </nav>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="inicio">
         <div class="container">
             <div class="content">
-                <h1 class="hero_title">Transformamos ideias em experiências digitais</h1>
-                <p>Soluções inovadoras que conectam marcas e pessoas através da tecnologia</p>
-                <a href="#" class="btn">Conheça nossos projetos</a>
+                <p class="hero-subtitle">Transformamos ideias em experiências digitais</p>
+                <h1 class="hero_title">Soluções inovadoras que conectam</h1>
+                <p>Conectamos marcas e pessoas através da tecnologia para criar experiências memoráveis e resultados
+                    tangíveis.</p>
+                <div class="hero-cta">
+                    <a href="#projetos" class="btn">Conheça nossos projetos</a>
+                </div>
             </div>
-            <img src="imagens/SER-DIGITAL.svg" alt="Digital Experience" class="hero_image">
-        </div>
     </section>
 
-    <!-- Brands Section -->
-    <section class="brands">
+    <section class="brands" id="marcas">
         <div class="container">
             <h2 class="section-title">Marcas que confiam em nós</h2>
-            <ul>
-                <li><img src="imagens/dropbox.svg" alt="dropbox"></li>
-                <li><img src="imagens/slack.svg" alt="Brand 2"></li>
-                <li><img src="imagens/spotify.svg" alt="Brand 3"></li>
-                <li><img src="imagens/zoom.svg" alt="Brand 4"></li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Branding Section -->
-    <section class="service-section">
-        <div class="container">
-            <div class="row">
-                <div class="service-content">
-                    <h2>Branding &amp; Design system</h2>
-                    <p>Normalmente usado em indústrias gráficas e produtoras para pré-visualização de designs,
-                        layouts e mockups. Nossa equipe cria identidades visuais poderosas que comunicam a essência
-                        da sua marca.</p>
+            <div class="brand-grid">
+                <div class="brand-item">
+                    <img src="imagens/dropbox.svg" alt="Brand 1">
+                </div>
+                <div class="brand-item">
+                    <img src="imagens/slack.svg" alt="Brand 2">
+                </div>
+                <div class="brand-item">
+                    <img src="imagens/spotify.svg" alt="Brand 3">
+                </div>
+                <div class="brand-item">
+                    <img src="imagens/youtube-svgrepo-com.svg" alt="Brand 4">
                 </div>
             </div>
-        </div>
     </section>
 
-    <!-- Results Section -->
-    <section class="service-section">
+    <section class="service-section" id="servicos">
         <div class="container">
-            <div class="row">
+            <div class="service-container">
+                <div class="service-content">
+                    <h2>Transformação Digital</h2>
+                    <p>Oferecemos soluções completas para transformar seu negócio digitalmente. Nossos serviços incluem
+                        desenvolvimento web, design de UX/UI, marketing digital e consultoria estratégica.</p>
+                    <p>Com uma abordagem centrada no usuário, criamos experiências digitais que encantam clientes e
+                        impulsionam resultados.</p>
+                    <a href="#contato" class="service-link">
+                        Fale conosco
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
                 <div class="service-image">
-                    <img src="imagens/customer-support-4x.png" alt="Results Analysis">
-                </div>
-                <div class="service-content">
-                    <h2>Análise de resultados</h2>
-                    <p>Todo projeto de comunicação precisa de um objetivo bem definido. Ajudamos no acompanhamento
-                        dos resultados obtidos com relatórios detalhados e insights acionáveis para impulsionar seu
-                        negócio.</p>
+                    <img src="imagens/customer-support-2x.png">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testemunhos">
-        <div class="container">
-            <h2 class="section-title">O que nossos clientes dizem</h2>
-            <div class="testemunhos_wrapper">
-                <div class="testemunho">
-                    <img src="imagens/western-man-4975942-4159828-1-2x.png" alt="Client" class="testemunho_thumb">
-                    <h3 class="testemunho_nome">Carlos Silva</h3>
-                    <blockquote>"A equipe da Ser Digital transformou nosso e-commerce com uma plataforma intuitiva e
-                        de alto desempenho. As vendas aumentaram 150% em 3 meses!"</blockquote>
-                </div>
-                <div class="testemunho">
-                    <img src="imagens/western-man-4975942-4159828-2-2x.png" alt="Client" class="testemunho_thumb">
-                    <h3 class="testemunho_nome">Juliana Mendes</h3>
-                    <blockquote>"O novo aplicativo desenvolvido superou todas as nossas expectativas. A experiência
-                        do usuário é excepcional e o feedback dos clientes tem sido incrível."</blockquote>
-                </div>
-                <div class="testemunho">
-                    <img src="imagens/western-man-4975942-4159828-3-2x.png" alt="Client" class="testemunho_thumb">
-                    <h3 class="testemunho_nome">Roberto Almeida</h3>
-                    <blockquote>"Profissionais extremamente capacitados e atenciosos. Entenderam perfeitamente nossa
-                        necessidade e entregaram uma solução completa dentro do prazo."</blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contato">
-        <div class="container contato-container">
-            <div class="contato_content">
-                <h2>Pronto para transformar seu negócio?</h2>
-                <p>Entre em contato conosco e descubra como podemos ajudar sua empresa a alcançar novos patamares no
-                    mundo digital.</p>
-                <a href="#" class="btn">Fale com um especialista</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>Empresa</h3>
+                    <h3>Nossa Empresa</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Sobre nós</a></li>
-                        <li><a href="#">Carreira</a></li>
-                        <li><a href="#">Parceiros</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Entre em contato conosco</h3>
-                    <div class="contact-info">
-                        <p>contato@serdigital.com</p>
-                        <p>(11) 1234-5678</p>
-                    </div>
-
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Digital, 1234</p>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@empresa.com</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-section">
                     <h3>Newsletter</h3>
                     <p>Inscreva-se para receber nossas novidades e atualizações.</p>
-                    <form>
-                        <input type="email" placeholder="Seu e-mail" class="footer-input">
-                        <button type="submit" class="footer-btn">Inscrever</button>
-                    </form>
+                    <input type="email" class="footer-input" placeholder="Seu e-mail">
+                    <button class="footer-btn">Inscrever</button>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>© 2025 Ser Digital. Todos os direitos reservados.</p>
+                <p>&copy; 2023 Empresa Digital. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
