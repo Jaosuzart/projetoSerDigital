@@ -67,7 +67,7 @@ body {
 
 /* Menu Hambúrguer Corrigido */
 .menu-toggle {
-  display: none; /* Inicialmente escondido, aparece em telas menores */
+  display: flex; /* Mostra o botão do menu hambúrguer */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -108,41 +108,46 @@ body {
 }
 
 .header-menu {
-  list-style-type: none;
-  display: flex; /* Padrão para desktop */
-  gap: 30px;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+  position: fixed; /* Fixo na tela */
+  top: 80px; /* Abaixo do header */
+  left: 0;
+  right: 0;
+  bottom: 0; /* Ocupa toda a altura restante */
+  background-color: var(--light);
+  flex-direction: column;
+  justify-content: flex-start; /* Alinha itens no topo */
+  align-items: center; /* Centraliza os itens de menu */
+  padding-top: 50px; /* Mais espaço no topo do menu */
+  gap: 20px; /* Espaço entre os itens de menu */
+  transform: translateX(-100%); /* Começa totalmente fora da tela (esquerda) */
+  transition: transform 0.4s ease-in-out;
+  z-index: 999; /* Abaixo do header mas acima do resto do conteúdo */
+  overflow-y: auto; /* Permite rolagem se muitos itens */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header-menu.active {
+  transform: translateX(0); /* Desliza para a posição visível */
+}
+
+.header-menu li {
+  width: 80%; /* Faz os itens não ocuparem 100% da largura, para estética */
+  text-align: center;
 }
 
 .header-menu a {
+  font-size: 1.3rem; /* Tamanho de fonte maior para mobile */
+  padding: 15px 30px; /* Alvos de toque maiores e melhor espaçamento */
+  width: 100%;
+  display: block;
+  border-radius: 8px; /* Leve arredondamento nos links */
   text-decoration: none;
   color: var(--dark);
-  font-weight: 500;
-  transition: var(--transition);
-  position: relative;
-  padding: 5px 0;
-  display: block;
 }
 
 .header-menu a:hover {
+  background-color: var(--gray); /* Feedback visual ao passar o mouse/tocar */
   color: var(--primary-color);
-}
-
-.header-menu a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--primary-color);
-  transition: var(--transition);
-}
-
-.header-menu a:hover::after {
-  width: 100%;
 }
 
 /* Hero Section */
@@ -200,15 +205,6 @@ body {
   background-color: var(--primary-color-dark);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(142, 173, 213, 0.4);
-}
-
-.hero_image {
-  /* Removido pois não há .hero_image no HTML fornecido */
-  /* max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  animation: float 3s ease-in-out infinite; */
 }
 
 /* Brands Section */
@@ -489,6 +485,24 @@ footer {
 }
 
 /* Responsive Design */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* Esconde o botão do menu hambúrguer em telas maiores */
+  }
+
+  .header-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    gap: 30px;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
 @media (max-width: 992px) {
   /* Tablets e laptops menores */
   .hero_title {
@@ -518,57 +532,6 @@ footer {
 
 @media (max-width: 768px) {
   /* Tablets em modo retrato e smartphones */
-  .header-container {
-    /* O .container pai já tem padding: 0 20px. Não precisa repetir aqui */
-    /* Se o .header não tiver um .container, então o .header-container precisa de padding */
-  }
-  .menu-toggle {
-    display: flex; /* Mostra o botão do menu hambúrguer */
-  }
-
-  .header-menu {
-    position: fixed; /* Fixo na tela */
-    top: 80px; /* Abaixo do header */
-    left: 0;
-    right: 0;
-    bottom: 0; /* Ocupa toda a altura restante */
-    background-color: var(--light);
-    flex-direction: column;
-    justify-content: flex-start; /* Alinha itens no topo */
-    align-items: center; /* Centraliza os itens de menu */
-    padding-top: 50px; /* Mais espaço no topo do menu */
-    gap: 20px; /* Espaço entre os itens de menu */
-    transform: translateY(-110%); /* Começa totalmente fora da tela (acima) */
-    transition: transform 0.4s ease-in-out;
-    z-index: 999; /* Abaixo do header mas acima do resto do conteúdo */
-    overflow-y: auto; /* Permite rolagem se muitos itens */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  .header-menu.active {
-    transform: translateY(0); /* Desliza para a posição visível */
-  }
-
-  .header-menu li {
-    width: 80%; /* Faz os itens não ocuparem 100% da largura, para estética */
-    text-align: center;
-  }
-
-  .header-menu a {
-    font-size: 1.3rem; /* Tamanho de fonte maior para mobile */
-    padding: 15px 30px; /* Alvos de toque maiores e melhor espaçamento */
-    width: 100%;
-    display: block;
-    border-radius: 8px; /* Leve arredondamento nos links */
-  }
-  .header-menu a:hover {
-    background-color: var(--gray); /* Feedback visual ao passar o mouse/tocar */
-    color: var(--primary-color);
-  }
-  .header-menu a::after {
-    display: none; /* Remove sublinhado no mobile */
-  }
-
   .hero_title {
     font-size: 2.2rem;
   }
